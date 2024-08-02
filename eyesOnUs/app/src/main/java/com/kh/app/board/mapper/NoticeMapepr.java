@@ -2,6 +2,7 @@ package com.kh.app.board.mapper;
 
 import com.kh.app.board.vo.NoticeVo;
 import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
 
@@ -41,7 +42,14 @@ public interface NoticeMapepr {
             ON N.WRITER_NO = E.NO
             ORDER BY N.NO DESC
             """)
-    List<NoticeVo> listData();
+    List<NoticeVo> listData(RowBounds rowBounds);
+
+    // 페이지 수 가져오기
+    @Select("""
+            SELECT COUNT(*)
+            FROM NOTICE_BOARD
+            """)
+    int getPageCount();
 
     // 상세조회
     @Select("""

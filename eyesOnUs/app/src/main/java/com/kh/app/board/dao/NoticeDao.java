@@ -3,6 +3,7 @@ package com.kh.app.board.dao;
 import com.kh.app.board.mapper.NoticeMapepr;
 import com.kh.app.board.vo.NoticeVo;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,8 +20,14 @@ public class NoticeDao {
     }
 
     // 목록
-    public List<NoticeVo> listData() {
-        return mapper.listData();
+    public List<NoticeVo> listData(int offset, int limit) {
+        RowBounds rowBounds = new RowBounds(offset, limit);
+        return mapper.listData(rowBounds);
+    }
+
+    // 페이지 처리
+    public int getPageCount(){
+        return mapper.getPageCount();
     }
 
     // 상세조회

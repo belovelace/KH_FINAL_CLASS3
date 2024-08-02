@@ -2,7 +2,9 @@ package com.kh.app.board.service;
 
 import com.kh.app.board.dao.NoticeDao;
 import com.kh.app.board.vo.NoticeVo;
+import com.kh.app.board.vo.PageVo;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,8 +23,15 @@ public class NoticeService {
     }
 
     // 목록
-    public List<NoticeVo> listData() {
-        return dao.listData();
+    public List<NoticeVo> listData(int page, int contentPageCnt) {
+        int offset = (page - 1) * contentPageCnt;
+        return dao.listData(offset, contentPageCnt);
+    }
+
+    // 페이지 처리
+    public PageVo getPageCount(int currentPage, int contentPageCnt, int paginationCount){
+        int totalContentCount = dao.getPageCount();
+        return new PageVo(totalContentCount, currentPage, contentPageCnt, paginationCount);
     }
 
     // 상세조회
