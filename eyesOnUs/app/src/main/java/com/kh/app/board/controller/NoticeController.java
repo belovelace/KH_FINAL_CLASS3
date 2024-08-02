@@ -3,12 +3,13 @@ package com.kh.app.board.controller;
 import com.kh.app.adminHr.vo.AdminHrVo;
 import com.kh.app.board.service.NoticeService;
 import com.kh.app.board.vo.NoticeVo;
-import jakarta.servlet.http.HttpServletRequest;
+import com.kh.app.board.vo.PageVo;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -55,11 +56,18 @@ public class NoticeController {
 
     @GetMapping("listData")
     @ResponseBody
-    public List<NoticeVo> listData(HttpSession session, HttpServletRequest req){
+    public HashMap<String, Object> listData(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int size){
 
-        List<NoticeVo> voList = service.listData();
+        int paginationCount = 5;
 
-        return voList;
+        List<NoticeVo> voList = service.listData(page, size);
+        PageVo pageVo = service.getPageCount(page, size, paginationCount);
+
+        HashMap<String ,Object> result = new HashMap<>();
+        result.put("voList", voList);
+        result.put("pageVo", pageVo);
+
+        return result;
     }
 
     // 상세조회

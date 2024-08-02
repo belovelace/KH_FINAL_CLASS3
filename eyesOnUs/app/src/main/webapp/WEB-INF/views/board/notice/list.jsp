@@ -76,6 +76,11 @@
 
                   </tbody>
                 </table>
+                <div class="pageBox">
+                  <div id="page">
+
+                  </div>
+                </div>
               </div>
             </div>
             <br>

@@ -103,3 +103,11 @@
 #rightBox tr:nth-child(even):hover{
   background-color: #e0f7fa;
 }
+
+#page{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  text-align: center;
+  cursor : pointer;
+}
