@@ -23,3 +23,4 @@ Eyes on Us 그룹웨어
 
 주선기 / 일정관리자, 이슈관리자
 
+## [⭐노션 포토폴리오](https://prairie-dietician-01c.notion.site/Eyes-On-Us-cb1efda2a0e448288d1ce42a76ea6ec1?pvs=41)
