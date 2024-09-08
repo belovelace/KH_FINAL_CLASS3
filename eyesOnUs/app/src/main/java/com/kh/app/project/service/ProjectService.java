@@ -28,6 +28,9 @@ public class ProjectService {
         {
             throw new RuntimeException("값이 NULL입니다.");
         }
+        if(vo == null){
+            throw new RuntimeException("로그인 되어있지 않습니다.");
+        }
 
         return dao.insertProject(vo);
     }

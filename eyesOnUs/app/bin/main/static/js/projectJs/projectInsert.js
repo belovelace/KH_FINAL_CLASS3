@@ -1,6 +1,6 @@
 const insertPmVal = document.querySelector("#insertPm").value;
 
-if(insertPmVal != 10){
+if(insertPmVal == 10){
     function smt(){
         const titleVal = document.querySelector("#title").value;
         const codeVal = document.querySelector("#code").value;
@@ -8,6 +8,10 @@ if(insertPmVal != 10){
         const stateVal = document.querySelector("#state").value;
         const contentVal = document.querySelector("#projectContent").value;
     
+        titleVal != null ? titleVal : alert("제목을 입력하세요");
+        contentVal != null ? contentVal : alert("제목을 입력하세요");
+
+
         $.ajax({
             url : '/project/projectInsert',
             type : 'post',
