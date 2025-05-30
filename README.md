@@ -23,4 +23,17 @@ Eyes on Us 그룹웨어
 
 주선기 / 일정관리자, 이슈관리자
 
+## 기술 스택
+
+| 이름       | 태그                            |
+| ---------- | ------------------------------- |
+| DevOps     | Git, SourceTree, Figma, Usecase |
+| RDBMS      | Oracle, SQL                     |
+| Language   | JAVA, JavaScript                |
+| Backend    | Node.js, JSP                    |
+| Frontend   | CSS3, HTML5                     |
+
+## 기획의도
+https://prairie-dietician-01c.notion.site/283d52b68f784895b3bfac5a714ea8af?source=copy_link
+
 ## [⭐노션 포트폴리오](https://prairie-dietician-01c.notion.site/Eyes-On-Us-cb1efda2a0e448288d1ce42a76ea6ec1?pvs=41)
